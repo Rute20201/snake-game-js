@@ -5,7 +5,10 @@
 <h2 align="center">Rute M.I.</h2>
 
 <div id=principal></div>
-<h1><p align="center"> <input type="button" value="REINICIAR GAME" id="btReiniciar"> </p></h1> 
+<h1><p align="center">
+ <input type="button" value="Reiniciar Game" id="btReiniciar">
+ <input  type="button" value="Nível Difícil" id="btVelocidade">
+</p></h1> 
    
 
 <script>
@@ -44,7 +47,15 @@
         if(vivo)setTimeout('anda()',300);
         else alert('Fim de jogo');
     }
+
+    var btVelocidade=document.getElementById("btVelocidade");
+    btVelocidade.addEventListener("click", velocidadeCobra);
+    function velocidadeCobra(){
+      setTimeout('anda()', 800);
+    }
+     
     anda();
+
     function pegadirecao(tecla){
         /*alert(tecla);*/
         if(tecla==37)direcao=0;
