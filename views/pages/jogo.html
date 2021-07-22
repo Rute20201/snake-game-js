@@ -2,9 +2,12 @@
 <html>
 <body onKeyDown="pegadirecao(event.keyCode);">
 
-<h2 align="center">Rute</h2>
+<h2 align="center">Rute M.I.</h2>
 
 <div id=principal></div>
+<h1><p align="center"> <input type="button" value="REINICIAR GAME" id="btReiniciar"> </p></h1> 
+   
+
 <script>
     tabuleiro="<table align=center border=1>";
     for(x=0;x<10;x++){
@@ -49,6 +52,13 @@
         if(tecla==39)direcao=2;
         if(tecla==40)direcao=3;
     }
+
+    var btReiniciar=document.getElementById("btReiniciar");
+    btReiniciar.addEventListener("click", reiniciarGame);
+    function reiniciarGame(){
+      location.reload(); 
+    }
+
 </script>
 </body>
 </html>
