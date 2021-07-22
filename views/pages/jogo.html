@@ -3,6 +3,7 @@
 <body onKeyDown="pegadirecao(event.keyCode);">
 
 <h2 align="center">Rute M.I.</h2>
+<h3> <div align="center" id="addPontos"></div></h3>
 
 <div id=principal></div>
 <h1><p align="center">
@@ -19,15 +20,18 @@
             tabuleiro+="<td id=td"+x+"_"+y+" style='width:30px; height:30px;'> </td>";
         tabuleiro+="</tr>";
     }
+    var addPontos=document.getElementById("addPontos");
     document.getElementById('principal').innerHTML=tabuleiro+"</table>";
     cobra=[[5,0]];
     direcao=2;
     mx=parseInt(Math.random()*10);
     my=parseInt(Math.random()*10);
     vivo=true;
+    soma=0
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
         if(mx==cobra[cobra.length-1][0]&&my==cobra[cobra.length-1][1]){
+            soma=cobra.length*10;
             mx=parseInt(Math.random()*10);
             my=parseInt(Math.random()*10);
             cobra[cobra.length]=[10,10];
@@ -36,6 +40,8 @@
             cobra[x][0]=cobra[x-1][0];
             cobra[x][1]=cobra[x-1][1];
         }
+  	addPontos.textContent=soma;
+
         if(direcao==0)cobra[0][1]--;
         if(direcao==1)cobra[0][0]--;
         if(direcao==2)cobra[0][1]++;
