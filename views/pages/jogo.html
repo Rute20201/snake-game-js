@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<body onKeyDown="pegadirecao(event.keyCode);">
+ <html>
+ <body onKeyDown="pegadirecao(event.keyCode);">
 
 <h2 align="center">Rute M.I.</h2>
 <h3> <div align="center" id="addPontos"></div></h3>
@@ -10,7 +10,7 @@
  <input type="button" value="Reiniciar Game" id="btReiniciar">
  <input  type="button" value="Nível Difícil" id="btVelocidade">
 </p></h1> 
-   
+<h1><p align="center"> <input type="button" value="Convidar amigo" id="btAmigo"></p></h1>   
 
 <script>
     tabuleiro="<table align=center border=1>";
@@ -70,6 +70,13 @@
         if(tecla==40)direcao=3;
     }
 
+    btAmigo=document.getElementById("btAmigo");
+    btAmigo.addEventListener("click",convidarAmigo);
+    function convidarAmigo (){
+      location.href="mailto:?subject=BORA JOGAR!!&body=https://github.com/Rute20201/snake-game-js/projects/3"
+    }
+    
+
     var btReiniciar=document.getElementById("btReiniciar");
     btReiniciar.addEventListener("click", reiniciarGame);
     function reiniciarGame(){
@@ -79,3 +86,4 @@
 </script>
 </body>
 </html>
+
